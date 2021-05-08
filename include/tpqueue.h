@@ -62,6 +62,7 @@ delete head;
 head = tmp;
 return data;
 }
+}
 };
 
 struct SYM {
