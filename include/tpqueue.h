@@ -34,6 +34,7 @@ while (temp) {
 if (temp->next == nullptr) {
 tail->next = item;
 tail = tail->next;
+break;
 } else {
 if (item->data.prior > temp->next->data.prior) {
 item->next = temp->next;
