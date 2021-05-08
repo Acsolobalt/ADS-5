@@ -26,16 +26,18 @@ TPQueue() : head(nullptr), tail(nullptr) {}
 while (head)
 pop();
 }
+
 void push(const T & data) {
 if (tail && head) {
-ITEM * item = create(data);
 ITEM * temp = head;
-if (item->data.prior > temp->data.prior) {
-item->next = head;
+if (data.prior > temp->data.prior) {
+temp = create(data);
+temp->next = head;
 head = item;
-}
+} else {
 while (temp->next) {
-if (item->data.prior > temp->next->data.prior) {
+if (data.prior > temp->next->data.prior) {
+ITEM * item = create(data);
 item->next = temp->next;
 temp->next = item;
 break;
@@ -43,16 +45,15 @@ break;
 temp = temp->next;
 }
 }
+}
 if (!temp->next) {
 tail->next = item;
 tail = tail->next;
-}
 } else {
 head = create(data);
 tail = head;
 }
 }
-
 T pop() {
 assert(head);
 ITEM* tmp = head->next;
