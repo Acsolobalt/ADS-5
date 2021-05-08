@@ -34,18 +34,18 @@ if (item->data.prior > temp->data.prior) {
 item->next = head;
 head = item;
 }
-while (temp) {
-if (temp->next == nullptr) {
-tail->next = item;
-tail = tail->next;
-break;
-} else {
+while (temp->next) {
 if (item->data.prior > temp->next->data.prior) {
 item->next = temp->next;
 temp->next = item;
 break;
+} else {
+temp = temp->next;
 }
 }
+if (!temp->next) {
+tail->next = item;
+tail = tail->next;
 }
 } else {
 head = create(data);
