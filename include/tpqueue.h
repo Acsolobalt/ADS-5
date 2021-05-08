@@ -30,6 +30,10 @@ void push(const T & data) {
 if (tail && head) {
 ITEM * item = create(data);
 ITEM * temp = head;
+if (item->data.prior > temp->data.prior) {
+item->next = head;
+head = item;
+}
 while (temp) {
 if (temp->next == nullptr) {
 tail->next = item;
