@@ -9,16 +9,18 @@ struct ITEM {
 T data;
 ITEM * next;
 };
-private:
+
+ private:
 TPQueue::ITEM * create(T data) {
 ITEM * item = new ITEM;
 item->data = data;
 item->next = nullptr;
 return item;
-};
+}
 ITEM * head;
 ITEM * tail;
-public:
+
+ public:
 TPQueue() : head(nullptr), tail(nullptr) {}
 ~TPQueue() {
 while (head)
@@ -45,7 +47,7 @@ head = create(data);
 tail = head;
 }
 }
-	
+
 T pop() {
 assert(head);
 ITEM* tmp = head->next;
