@@ -11,11 +11,11 @@ ITEM * next;
 };
 
  private:
-TPQueue::ITEM * create(T data) {
-ITEM * item = new ITEM;
-item->data = data;
-item->next = nullptr;
-return item;
+ITEM * create(T data) {
+ITEM * temp = new ITEM;
+temp->data = data;
+temp->next = nullptr;
+return temp;
 }
 ITEM * head;
 ITEM * tail;
