@@ -37,9 +37,9 @@ head = temp;
 } else {
 while (temp->next) {
 if (data.prior > temp->next->data.prior) {
-ITEM * item = create(data);
-item->next = temp->next;
-temp->next = item;
+ITEM * t = create(data);
+t->next = temp->next;
+temp->next = t;
 break;
 } else {
 temp = temp->next;
