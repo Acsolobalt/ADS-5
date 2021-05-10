@@ -47,7 +47,7 @@ temp = temp->next;
 }
 }
 if (!temp->next) {
-tail->next = item;
+tail->next = temp;
 tail = tail->next;
 }
 } else {
