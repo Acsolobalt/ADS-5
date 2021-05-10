@@ -49,6 +49,7 @@ temp = temp->next;
 if (!temp->next) {
 tail->next = item;
 tail = tail->next;
+}
 } else {
 head = create(data);
 tail = head;
@@ -61,7 +62,6 @@ T data = head->data;
 delete head;
 head = tmp;
 return data;
-}
 }
 };
 
