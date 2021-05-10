@@ -33,7 +33,7 @@ ITEM * temp = head;
 if (data.prior > temp->data.prior) {
 temp = create(data);
 temp->next = head;
-head = item;
+head = temp;
 } else {
 while (temp->next) {
 if (data.prior > temp->next->data.prior) {
